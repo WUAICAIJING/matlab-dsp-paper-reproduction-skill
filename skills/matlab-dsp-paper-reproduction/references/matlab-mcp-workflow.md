@@ -1,6 +1,21 @@
 # MATLAB MCP Workflow
 
-Use MATLAB MCP as the execution and inspection loop when available.
+Use MATLAB MCP as the execution and inspection loop when available. The skill can depend on a MATLAB MCP server, but the server may not be installed or exposed in every Codex session.
+
+## Availability Check
+
+Before execution:
+
+- Inspect available MCP tools/resources for a MATLAB-related server or tool.
+- If a MATLAB MCP tool is visible, use it to run focused scripts/functions.
+- If MATLAB MCP is not visible, say that execution is unavailable in this session and provide runnable MATLAB code instead.
+- Do not claim a simulation was executed unless MATLAB MCP actually ran it.
+
+Recommended user-facing wording when unavailable:
+
+```text
+当前会话没有暴露 MATLAB MCP，所以我先生成可运行的 MATLAB 脚本和预期图形/指标。等 MATLAB MCP 可用后，我可以继续自动运行、检查图和迭代。
+```
 
 ## Execution Loop
 
@@ -44,3 +59,17 @@ If MATLAB MCP is unavailable:
 - Include manual run instructions.
 - Explain how to inspect variables and figures.
 - Do not claim the simulation was executed.
+
+## Suggested MCP Dependency Metadata
+
+When publishing this skill, declare a MATLAB MCP dependency in `agents/openai.yaml` so users know the intended integration:
+
+```yaml
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "matlab"
+      description: "MATLAB MCP server for running MATLAB code, inspecting variables, and reviewing generated figures."
+```
+
+The exact MCP server name may vary by installation. If the local server is named differently, adapt `value` to the installed server identifier.

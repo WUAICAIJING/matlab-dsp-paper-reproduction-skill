@@ -2,5 +2,10 @@ interface:
   display_name: "MATLAB DSP Paper Reproduction"
   short_description: "MATLAB DSP paper learning and simulation"
   default_prompt: "Use $matlab-dsp-paper-reproduction to decompose a DSP or communication paper, derive formulas, run MATLAB simulations, review plots, and produce learning-oriented reproduction notes."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "matlab"
+      description: "MATLAB MCP server for running MATLAB code, inspecting variables, collecting metrics, and reviewing generated figures."
 policy:
   allow_implicit_invocation: true

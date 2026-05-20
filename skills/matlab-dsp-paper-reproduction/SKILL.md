@@ -13,6 +13,7 @@ Use this skill to help users learn, simulate, and reproduce DSP, communication, 
 - Start with a short intake and module plan before implementation.
 - Explain each module before coding it: principle, formulas, MATLAB mapping, expected plots, and verification criteria.
 - Use MATLAB MCP when available to generate, run, inspect, and iterate simulations.
+- Check whether MATLAB MCP is available before claiming any code was executed.
 - Prefer plots for abstract concepts. If a concept can be shown visually, design a MATLAB figure for it.
 - Ask the user before writing formal Markdown reports or module notes.
 - Keep explanations primarily in Chinese. Keep MATLAB variables/functions in English. Preserve paper symbols when useful.
@@ -116,6 +117,8 @@ Read `references/dsp-knowledge-map.md` when choosing which concepts must be cove
 
 ### 4. MATLAB MCP Execution Loop
 
+First check whether a MATLAB MCP server/tool is available in the current session. Use it when present. If no MATLAB MCP capability is visible, say so and fall back to runnable MATLAB code plus manual inspection instructions.
+
 When MATLAB MCP is available:
 
 1. Generate focused module code.
@@ -125,6 +128,8 @@ When MATLAB MCP is available:
 5. Iterate until the result is theoretically consistent or the mismatch is explained.
 6. Save figures, data, and logs into `results/`.
 7. Ask before writing formal `.md` documentation.
+
+Never state that a MATLAB script was run unless MATLAB MCP actually executed it.
 
 If MATLAB MCP is unavailable, generate runnable MATLAB code, expected output descriptions, and manual inspection instructions.
 
