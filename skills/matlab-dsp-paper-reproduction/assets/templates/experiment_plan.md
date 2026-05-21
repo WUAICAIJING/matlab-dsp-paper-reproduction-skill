@@ -15,12 +15,12 @@ Describe the paper, algorithm, target figure, or learning goal.
 
 ## Module Plan
 
-| Module | Purpose | Key Formula | MATLAB File | Expected Figure | Verification |
-|---|---|---|---|---|---|
-| 01 | Signal model | | | | |
-| 02 | Random process / PSD | | | | |
-| 03 | Core algorithm | | | | |
-| 04 | Metrics / reproduction | | | | |
+| Module | Purpose | Key Formula | MATLAB File | Required Process Figures | Final Result Figures | Verification |
+|---|---|---|---|---|---|---|
+| 01 | Signal model | | | | | |
+| 02 | Random process / PSD | | | | | |
+| 03 | Core algorithm | | | | | |
+| 04 | Metrics / reproduction | | | | | |
 
 ## Expected Outputs
 
@@ -28,6 +28,12 @@ Describe the paper, algorithm, target figure, or learning goal.
 - Figures:
 - Metrics:
 - Documentation:
+
+## Teaching Goals
+
+- What transformation must become visually obvious:
+- What misconception the modules should remove:
+- Practical takeaway:
 
 ## Risks And Ambiguities
 

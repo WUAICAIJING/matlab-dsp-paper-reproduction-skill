@@ -15,6 +15,9 @@ Use this skill to help users learn, simulate, and reproduce DSP, communication, 
 - Use MATLAB MCP when available to generate, run, inspect, and iterate simulations.
 - Check whether MATLAB MCP is available before claiming any code was executed.
 - Prefer plots for abstract concepts. If a concept can be shown visually, design a MATLAB figure for it.
+- For transformation-heavy concepts, do not stop at final-result figures.
+- If the result depends on shifting, folding, wrapping, translation, accumulation, convergence, or correction, generate intermediate process figures.
+- A final plot alone is not sufficient if the learner cannot infer the process from it.
 - Ask the user before writing formal Markdown reports or module notes.
 - Keep explanations primarily in Chinese. Keep MATLAB variables/functions in English. Preserve paper symbols when useful.
 
@@ -104,14 +107,16 @@ Read `references/workflow.md` for the full module workflow.
 
 ### 3. Module Explanation
 
-For each module, explain before coding:
+For each module, use this process-first order by default:
 
-- Principle in Chinese.
-- Key formula derivation.
-- Assumptions and valid conditions.
-- Mapping from formulas to MATLAB variables/functions.
-- What figure should make the concept intuitive.
-- Common mistakes, such as normalization, frequency-axis, sampling-rate, and continuous/discrete-domain confusion.
+1. State what problem the concept solves.
+2. Give the intuition in Chinese.
+3. Show process figures or intermediate-state figures before the final result.
+4. Then derive formulas and map symbols to MATLAB variables/functions.
+5. Run MATLAB simulation verification.
+6. Summarize theoretical conclusion, engineering takeaway, and common misconceptions.
+
+Avoid jumping directly from formulas to a final plot. For transformations, make the process visually obvious before presenting conclusions.
 
 Read `references/dsp-knowledge-map.md` when choosing which concepts must be covered.
 
@@ -171,10 +176,26 @@ Before accepting a module or final reproduction:
 - Do MATLAB variables match formula symbols?
 - Are vector/matrix dimensions correct?
 - Do figures explain the intended concept?
+- Does this module show the process, not only the outcome?
+- Could a learner with weak abstraction ability understand the transformation from the figures alone?
+- Are intermediate steps visible for abstract transformations?
+- Is there an explicit practical or engineering takeaway?
+- Did the explanation avoid jumping directly from formulas to conclusions?
 - Are PSD, frequency response, constellation, error trajectory, or control plots included when needed?
 - Are reproduction differences against the paper explained?
 
 Read `references/simulation-driven-verification.md` for the verification pattern.
+
+## Anti-Patterns
+
+Avoid:
+
+- Showing only the final spectrum and calling it explained.
+- Giving numerical examples without a visual transformation process.
+- Stating aliasing, folding, wrapping, or convergence results without showing how they occur.
+- Over-relying on symbolic derivation when process figures are needed.
+- Treating "a plot exists" as equivalent to "the concept is teachable".
+- Letting MATLAB produce a correct result while the learner cannot see the intermediate mechanism.
 
 ### 7. Documentation Permission
 

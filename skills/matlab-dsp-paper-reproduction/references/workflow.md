@@ -24,10 +24,28 @@ For each module record:
 - Key equations.
 - MATLAB inputs and outputs.
 - Expected visual phenomenon.
+- Required process figures.
+- Final result figures.
+- What transformation must become visually obvious.
+- What misconception this module is designed to remove.
+- Practical takeaway.
 - Verification metric or sanity check.
 - Relationship to paper figures or algorithm blocks.
 
 Do not merge modules too early. A module is ready for integration only after its plots and checks make sense.
+
+## Process-First Module Teaching Order
+
+Use this order unless the user explicitly asks for a different style:
+
+1. What problem the concept solves.
+2. Intuition before formulas.
+3. Process figures or intermediate states.
+4. Formula derivation and MATLAB symbol mapping.
+5. MATLAB simulation verification.
+6. Theory conclusion, engineering takeaway, and common misconceptions.
+
+For transformation-heavy modules, the process figures are required, not optional. A final result figure is insufficient if the learner cannot infer the intermediate operation.
 
 ## Suggested Project Layout
 

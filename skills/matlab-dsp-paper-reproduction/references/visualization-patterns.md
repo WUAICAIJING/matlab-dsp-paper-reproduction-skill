@@ -2,6 +2,59 @@
 
 Use figures to make abstract DSP, probability, communication, and control concepts visible.
 
+## Process Visualization Patterns
+
+Use process figures when a concept depends on shifting, folding, wrapping, translation, accumulation, convergence, correction, or continuous/discrete mapping. The goal is not merely to show that the final answer is correct; it is to make the transformation visually teachable.
+
+### Sampling And Aliasing
+
+- First figure: continuous-time waveform with sampling instants overlaid.
+- Intermediate figure(s): sampled sequence for two or more sampling rates; show a high-frequency sinusoid producing the same samples as a lower-frequency alias.
+- Final figure: reconstructed or interpreted discrete-time frequency compared with the original frequency.
+- Misconception removed: aliasing is not just "bad sampling"; it is ambiguity created because different continuous-time signals can produce indistinguishable sample sequences.
+
+### Spectral Replication, Folding, And Translation
+
+- First figure: original baseband spectrum before sampling, mixing, or modulation.
+- Intermediate figure(s): replicated spectra at multiples of sampling frequency, translated spectra after multiplication/mixing, and overlapping regions highlighted.
+- Final figure: observed discrete-time or downconverted spectrum after overlap/folding.
+- Misconception removed: spectral components do not mysteriously appear; they come from replication, translation, and overlap.
+
+### Digital Frequency Wrapping
+
+- First figure: frequency axis before wrapping, with components outside the principal interval.
+- Intermediate figure(s): wrap components step by step into `[-pi, pi)` or `[0, 2*pi)`; mark equivalent digital frequencies.
+- Final figure: wrapped spectrum or normalized-frequency representation.
+- Misconception removed: frequencies outside the digital principal interval are not discarded; they are equivalent modulo `2*pi`.
+
+### Convolution Build-Up
+
+- First figure: input sequence and impulse response separately.
+- Intermediate figure(s): flipped-and-shifted impulse response at several shifts; highlight pointwise products and partial sums.
+- Final figure: complete convolution output with selected samples linked back to their accumulation steps.
+- Misconception removed: convolution is not only a formula or black-box smoothing; each output sample is an accumulated overlap.
+
+### Matched Filtering Accumulation
+
+- First figure: received waveform and template/pulse shape before filtering.
+- Intermediate figure(s): sliding template overlap, correlation accumulation, and noise averaging across the matched interval.
+- Final figure: matched-filter output with sampling instant and peak SNR location marked.
+- Misconception removed: matched filtering is not just another low-pass filter; it accumulates energy aligned with the expected signal shape.
+
+### Synchronization Error Convergence
+
+- First figure: impaired signal before correction, such as rotating constellation, drifting phase, or closing eye diagram.
+- Intermediate figure(s): detector output, loop-filter output, NCO/control signal, and error trajectory over early/mid/late iterations.
+- Final figure: corrected constellation, opened eye, converged error, or locked loop response.
+- Misconception removed: synchronization does not happen in one step; the loop measures error, filters it, corrects the oscillator/interpolator, and converges dynamically.
+
+### Continuous/Discrete Mapping
+
+- First figure: continuous-time system in the s-plane or analog frequency response.
+- Intermediate figure(s): sampling period effect, mapping from s-plane to z-plane, and frequency warping or pole movement.
+- Final figure: discrete-time response compared with the analog target.
+- Misconception removed: discretization is not a direct copy of the analog system; the mapping changes frequency behavior, stability interpretation, and implementation details.
+
 ## Random Processes
 
 Recommended plots:

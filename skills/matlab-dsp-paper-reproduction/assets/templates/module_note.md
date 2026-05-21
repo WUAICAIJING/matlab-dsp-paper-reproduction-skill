@@ -8,6 +8,14 @@ Explain what this module teaches or verifies.
 
 Write the concept explanation in Chinese. Preserve important English terms from the paper and explain them.
 
+## Process-First Intuition
+
+- Problem solved:
+- Intuition:
+- Required process figures:
+- What transformation should become visually obvious:
+- Misconception removed:
+
 ## Key Formulas
 
 Use notation close to the paper.
@@ -34,7 +42,9 @@ Add figure links and captions after user approval.
 
 - Formula consistency:
 - Unit and normalization:
+- Process visibility:
 - Figure interpretation:
+- Practical or engineering takeaway:
 - Difference from theory or paper:
 
 ## Common Pitfalls
